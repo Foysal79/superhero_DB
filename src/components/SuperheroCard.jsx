@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const SuperheroCard = ({ hero }) => {
   return (
-    
+    <Link key={hero.id} to={`/hero/${hero.id}`}>
       <div className="relative w-full max-w-xs aspect-[3/4] rounded-xl overflow-hidden border-2 border-white/20 shadow-lg group mx-auto">
         {/* Image */}
         <img
@@ -54,7 +54,7 @@ const SuperheroCard = ({ hero }) => {
           </div>
         </div>
       </div>
-    
+    </Link>
   );
 };
 
