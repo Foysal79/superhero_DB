@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const SuperheroDetails = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <h1>SuperheroDetails</h1>
+    </div>
+  );
 };
 
 export default SuperheroDetails;
