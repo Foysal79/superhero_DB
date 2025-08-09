@@ -54,7 +54,8 @@ const SuperheroList = () => {
           Super<span className="text-[#6A60F1]">Hero</span> DB
         </h1>
 
-        <div className="flex gap-7 items-center">
+        <div className="flex gap-4 items-center">
+          
           <input
             value={query}
             onChange={(e) => {
@@ -62,7 +63,7 @@ const SuperheroList = () => {
               setPage(1);
             }}
             placeholder="Search by name..."
-            className=" px-3 py-2 border rounded-md"
+            className=" px-3 py-2 border rounded-md "
           />
           <SortToggle sortAsc={sortAsc} setSortAsc={setSortAsc} />
         </div>
