@@ -12,7 +12,10 @@ const SuperheroCard = ({ hero }) => {
         />
 
         {/* Glass overlay for all text */}
-        <div className="absolute bottom-[-25%] md:bottom-[-42%] lg:bottom-[-40%] xl:bottom-[-29%]  left-0 w-full backdrop-blur-xl bg-white/10 p-5 text-white transition-all duration-500 ease-out group-hover:bottom-0">
+        <div
+          className="absolute bottom-[-25%] md:bottom-[-42%] lg:bottom-[-40%] 
+        xl:bottom-[-29%] 2xl:bottom-[-24%]  left-0 w-full backdrop-blur-xl bg-white/10 p-5 text-white transition-all duration-500 ease-out group-hover:bottom-0"
+        >
           <h2 className="text-2xl font-semibold">{hero?.name}</h2>
           <p className="text-sm opacity-80">{hero.biography?.publisher}</p>
           <div className="mt-3 space-y-1 text-sm opacity-90 grid grid-cols-2">
