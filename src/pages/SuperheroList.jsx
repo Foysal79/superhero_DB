@@ -14,6 +14,7 @@ const SuperheroList = () => {
   const [sortAsc, setSortAsc] = useState(true);
   const [loading, setLoading] = useState(false);
   const [hasNext, setHasNext] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const t = setTimeout(() => setDebouncedQuery(query.trim()), 500);
@@ -29,6 +30,7 @@ const SuperheroList = () => {
       perPage,
       query: debouncedQuery || undefined,
       sort,
+      signal: controller.signal,
     })
       .then((data) => {
         const arr = Array.isArray(data?.items) ? data.items : [];
@@ -39,6 +41,9 @@ const SuperheroList = () => {
         console.error("Fetch error:", err);
         setItems([]);
         setHasNext(false);
+        setError(
+          "Failed to load data. Please check your network connection and try again."
+        );
       })
       .finally(() => setLoading(false));
 
@@ -55,7 +60,6 @@ const SuperheroList = () => {
         </h1>
 
         <div className="flex gap-4 items-center">
-          
           <input
             value={query}
             onChange={(e) => {
@@ -68,6 +72,9 @@ const SuperheroList = () => {
           <SortToggle sortAsc={sortAsc} setSortAsc={setSortAsc} />
         </div>
       </header>
+
+      {/* error message */}
+      {error && <div className="text-center text-red-500 my-6">{error}</div>}
 
       {loading ? (
         <div
