@@ -1,5 +1,8 @@
 # Superhero Database Frontend
 [Live Demo](https://superherod.netlify.app/)
+
+
+
 A simple and visually appealing React.js frontend for browsing superheroes using the public Superhero API.  
 Features include browsing superheroes with pagination, searching by name, sorting by name, and viewing full details of each superhero.
 
