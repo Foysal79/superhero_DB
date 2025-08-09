@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const Pagination = ({ page, setPage, canPrev, canNext })=> {
-    return (
-        <div className="flex items-center gap-2 justify-center">
+const Pagination = ({ page, setPage, canPrev, canNext }) => {
+  return (
+    <div className="flex items-center gap-2 justify-center">
       <button
         onClick={() => setPage((p) => Math.max(1, p - 1))}
         disabled={!canPrev}
@@ -20,9 +20,8 @@ const Pagination = ({ page, setPage, canPrev, canNext })=> {
       >
         Next
       </button>
-      
     </div>
-    );
+  );
 };
 
 export default Pagination;

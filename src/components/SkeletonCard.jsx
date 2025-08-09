@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const SkeletonCard = () => {
-    return (
-       <div className="relative w-full max-w-xs aspect-[3/4] rounded-xl overflow-hidden border-2 border-white/20 shadow-lg group mx-auto">
+  return (
+    <div className="relative w-full max-w-xs aspect-[3/4] rounded-xl overflow-hidden border-2 border-white/20 shadow-lg group mx-auto">
       {/* Image placeholder */}
-      <div  className="absolute inset-0 w-full h-full object-cover"></div>
+      <div className="absolute inset-0 w-full h-full object-cover"></div>
 
       <div className="absolute bottom-0 left-0 w-full backdrop-blur-xl bg-white/10 p-5 text-white">
         <div className="h-8 bg-gray-400 rounded w-3/4 mb-2"></div>
@@ -25,7 +25,7 @@ const SkeletonCard = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default SkeletonCard;
