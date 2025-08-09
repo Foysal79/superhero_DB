@@ -107,8 +107,8 @@ const SuperheroList = () => {
           <Pagination
             page={page}
             setPage={setPage}
-            canPrev={page > 1}
-            canNext={hasNext}
+            Prev={page > 1}
+            Next={hasNext}
           />
         </div>
         {/* per page card */}

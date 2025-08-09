@@ -1,24 +1,27 @@
 import React from "react";
+import { SlArrowLeftCircle, SlArrowRightCircle } from "react-icons/sl";
 
-const Pagination = ({ page, setPage, canPrev, canNext }) => {
+const Pagination = ({ page, setPage, Prev, Next }) => {
   return (
-    <div className="flex items-center gap-2 justify-center">
+    <div className="flex items-center ">
       <button
         onClick={() => setPage((p) => Math.max(1, p - 1))}
-        disabled={!canPrev}
-        className="px-3 py-1 border rounded disabled:opacity-50"
+        disabled={!Prev}
+        className="px-5  py-2 border  rounded-l-xl disabled:opacity-50"
       >
-        Prev
+        <SlArrowLeftCircle className="text-xl" />
       </button>
 
-      <div className="px-3 py-1 border rounded ">Page {page}</div>
+      <div className="px-5  py-1 border  ">
+        <span className="text-lg font-sans">Page : {page}</span>
+      </div>
 
       <button
         onClick={() => setPage((currant_page) => currant_page + 1)}
-        disabled={!canNext}
-        className="px-3 py-1 border rounded disabled:opacity-50"
+        disabled={!Next}
+        className="px-5  py-2 border  rounded-r-xl disabled:opacity-50"
       >
-        Next
+        <SlArrowRightCircle className="text-xl" />
       </button>
     </div>
   );
