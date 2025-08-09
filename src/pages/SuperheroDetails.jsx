@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchSuperheroById } from "../services/superheroesApi";
+import SuperheroDetailsSkeleton from "../components/SuperheroDetailsSkeleton";
 
 const SuperheroDetails = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const SuperheroDetails = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <div className="p-6 text-white">Loading...</div>;
+  if (loading) return <SuperheroDetailsSkeleton /> ;
   if (!hero) return <div className="p-6 text-white">Hero not found.</div>;
 
   return (
@@ -34,7 +35,8 @@ const SuperheroDetails = () => {
       </button>
 
       {/* Main Card */}
-      <div className="w-full max-w-5xl rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl p-6 flex flex-col md:flex-row items-center gap-8">
+      <div className="w-full max-w-5xl rounded-2xl bg-white/10 backdrop-blur-xl 
+      border border-white/20 shadow-xl p-6 flex flex-col md:flex-row items-center gap-8">
         {/* Hero Image */}
         <img
           src={hero.image?.url}
@@ -51,10 +53,10 @@ const SuperheroDetails = () => {
           <section className="mt-4">
             <h3 className="font-semibold text-lg">Biography</h3>
             <ul className="text-sm leading-6">
-              <li><strong>Publisher:</strong> {hero.biography?.publisher}</li>
-              <li><strong>First appearance:</strong> {hero.biography?.["first-appearance"]}</li>
-              <li><strong>Place of birth:</strong> {hero.biography?.["place-of-birth"]}</li>
-              <li><strong>Aliases:</strong> {(hero.biography?.aliases || []).join(", ")}</li>
+              <li><strong>Publisher : </strong> {hero.biography?.publisher}</li>
+              <li><strong>First appearance : </strong> {hero.biography?.["first-appearance"]}</li>
+              <li><strong>Place of birth : </strong> {hero.biography?.["place-of-birth"]}</li>
+              <li><strong>Aliases : </strong> {(hero.biography?.aliases || []).join(", ")}</li>
             </ul>
           </section>
 
