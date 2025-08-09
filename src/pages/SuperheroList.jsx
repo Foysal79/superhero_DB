@@ -46,7 +46,7 @@ const SuperheroList = () => {
   }, [page, perPage, debouncedQuery, sortAsc]);
 
   return (
-    <div className=" mx-auto p-1 md:p-4 text-white bg-[#00031C] min-h-screen">
+    <div className=" mx-auto p-1 md:p-6 text-white bg-[#00031C] min-h-screen">
       {/* header session */}
       <header className="flex flex-col sm:flex-row sm:items-center justify-between  my-6 mx-4 md:mx-8 lg:mb-20">
         {/* super hero Logo */}

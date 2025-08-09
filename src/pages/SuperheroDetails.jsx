@@ -20,12 +20,11 @@ const SuperheroDetails = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <SuperheroDetailsSkeleton /> ;
-  if (!hero) return <div className="p-6 text-white">Hero not found.</div>;
+  if (loading) return <SuperheroDetailsSkeleton />;
+  if (!hero) return <div className="p-6 text-white">Hero is Not found.</div>;
 
   return (
-    <div className="min-h-screen bg-[#00031C] text-white p-4 flex flex-col items-center">
-      
+    <div className="min-h-screen bg-[#00031C] text-white p-6 flex flex-col items-center">
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
@@ -35,8 +34,10 @@ const SuperheroDetails = () => {
       </button>
 
       {/* Main Card */}
-      <div className="w-full max-w-5xl rounded-2xl bg-white/10 backdrop-blur-xl 
-      border border-white/20 shadow-xl p-6 flex flex-col md:flex-row items-center gap-8">
+      <div
+        className="w-full max-w-5xl rounded-2xl bg-white/10 backdrop-blur-xl 
+      border border-white/20 shadow-xl p-6 flex flex-col md:flex-row items-center gap-8"
+      >
         {/* Hero Image */}
         <img
           src={hero.image?.url}
@@ -47,16 +48,29 @@ const SuperheroDetails = () => {
         {/* Hero Info */}
         <div className="flex-1">
           <h1 className="text-3xl font-bold">{hero.name}</h1>
-          <p className="text-sm text-gray-300">{hero?.biography?.["full-name"]}</p>
+          <p className="text-sm text-gray-300">
+            {hero?.biography?.["full-name"]}
+          </p>
 
           {/* Biography */}
           <section className="mt-4">
             <h3 className="font-semibold text-lg">Biography</h3>
             <ul className="text-sm leading-6">
-              <li><strong>Publisher : </strong> {hero.biography?.publisher}</li>
-              <li><strong>First appearance : </strong> {hero.biography?.["first-appearance"]}</li>
-              <li><strong>Place of birth : </strong> {hero.biography?.["place-of-birth"]}</li>
-              <li><strong>Aliases : </strong> {(hero.biography?.aliases || []).join(", ")}</li>
+              <li>
+                <strong>Publisher : </strong> {hero.biography?.publisher}
+              </li>
+              <li>
+                <strong>First appearance : </strong>{" "}
+                {hero.biography?.["first-appearance"]}
+              </li>
+              <li>
+                <strong>Place of birth : </strong>{" "}
+                {hero.biography?.["place-of-birth"]}
+              </li>
+              <li>
+                <strong>Aliases : </strong>{" "}
+                {(hero.biography?.aliases || []).join(", ")}
+              </li>
             </ul>
           </section>
 
